@@ -1,1 +1,0 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/cot3546o57747a4f?svg=true)](https://ci.appveyor.com/project/nionka/ajs-set-map-1)
