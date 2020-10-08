@@ -1,25 +1,17 @@
-import ErrorRepository from '../ErrorRepository';
+import Settings from '../Settings';
 
-test('check class ErrorRepository', () => {
-  function checkErrors() {
-    const err = new ErrorRepository();
-    err.errors.set(1, 'Ошибка создания персонажа!');
-    err.errors.set(2, 'Неправильно выбрано имя!');
-
-    return err.translate(1);
+test('check class Settings', () => {
+  function checkSetting() {
+    const test = new Settings();
+    return test.setting;
   }
-
-  expect(checkErrors()).toEqual('Ошибка создания персонажа!');
+  expect(checkSetting()).toEqual(new Map([['theme', 'dark'], ['music', 'trance'], ['difficulty', 'easy']]));
 });
 
-test('check class ErrorRepository', () => {
-  function checkErrors() {
-    const err = new ErrorRepository();
-    err.errors.set(1, 'Ошибка создания персонажа!');
-    err.errors.set(2, 'Неправильно выбрано имя!');
-
-    return err.translate(5);
+test('check class Settings', () => {
+  function checkSetting() {
+    const test = new Settings({ theme: 'gray' }, { music: 'pop' });
+    return test.setting;
   }
-
-  expect(checkErrors()).toEqual('Unknown error');
+  expect(checkSetting()).toEqual(new Map([['theme', 'gray'], ['music', 'pop'], ['difficulty', 'easy']]));
 });
